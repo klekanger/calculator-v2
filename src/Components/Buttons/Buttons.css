@@ -1,0 +1,69 @@
+button {
+    box-shadow: 3px 3px 2px #ddd;
+}
+
+button:focus { 
+    outline: none; 
+}
+
+button:active { 
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+
+
+.show-buttons {
+    background-color: #fff;
+    width: 90%;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 10px;
+  }
+  
+
+.small-button {
+    font-size: 1.1em;
+    width: 22%;
+    height: 50px;
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  .big-button {
+    font-size: 1.1em;
+    width: 47%;
+    height: 50px;
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  .vertical-button {
+    font-size: 1.1em;
+    width: 15%;;
+    height: 110px;
+    border: 1px solid #ddd;
+    background-color: #aaccee;
+    margin: 5px;
+    position: absolute;
+    border-radius: 10px;
+  }
+  
+  .small-button:hover {
+    background-color: #ccc;
+    cursor: pointer; 
+  }
+  
+  .big-button:hover {
+    background-color: #ccc;
+    cursor: pointer; 
+  }
+  
+  .vertical-button:hover {
+    background-color: #99bbdd;
+    cursor: pointer;
+  }
