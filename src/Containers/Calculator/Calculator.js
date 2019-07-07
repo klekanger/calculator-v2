@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FormulaBar from "../../Components/FormulaBar/FormulaBar";
 import "./Calculator.css";
 
@@ -28,7 +28,7 @@ const Calculator = props => {
       setHavePrevCalculation(false);
       prevVal = currentVal;
     }
-    
+
     // Check if formulaToCalculate already ends with an operator. If so, remove it and replace with the operator just entered
     // Then add current entered value to formulaToCalculate
     if (endsWithOperator.test(formulaToCalculate)) {
