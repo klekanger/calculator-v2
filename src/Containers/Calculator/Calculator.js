@@ -13,13 +13,11 @@ const Calculator = props => {
 
   // Onclick-handlers for the buttons
 
-  // PUSHED RESET (AC)
   const handleReset = () => {
     setFormulaToCalculate("");
     setCurrentVal("0");
   };
 
-  // PUSHED OPERATOR BUTTON
   const handleOperator = event => {
 
     let prevVal = formulaToCalculate;    
@@ -35,7 +33,6 @@ const Calculator = props => {
         formulaToCalculate.slice(0, -1) + event.target.value
       );
     } else {
-      // setFormulaToCalculate(formulaToCalculate + event.target.value);
       setFormulaToCalculate(prevVal + event.target.value);
     }
 
@@ -78,9 +75,9 @@ const Calculator = props => {
     if (endsWithOperator.test(expression)) {
       expression = expression.slice(0, -1);
     }
+    // eslint-disable-next-line
     let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
-//    setCurrentVal("");
-//    setFormulaToCalculate(answer.toString());
+
     setFormulaToCalculate(formulaToCalculate + " = " + answer);
     setCurrentVal(answer);
     setHavePrevCalculation(true);
