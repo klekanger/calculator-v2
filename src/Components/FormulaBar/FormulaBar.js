@@ -1,7 +1,16 @@
 import React from "react";
+import Aux from "../../hoc/Aux";
 
-const formulaBar = props => (
-    <div>FORMULABAR</div>
-);
+const Formulabar = props => {
+  return (
+    <Aux>
+      <div id="formula">
+        {!props.fullFormula ? "N/A" : props.fullFormula}
+        <br />
+      </div>
+      <div id="display">{props.valueToShow}</div>
+    </Aux>
+  );
+};
 
-export default formulaBar;
+export default Formulabar;

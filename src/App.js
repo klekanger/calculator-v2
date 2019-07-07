@@ -11,6 +11,7 @@ const app = props => {
 
 
 
+
 /* OLD CODE
 
 const endsWithOperator = /[*+-/]$/,

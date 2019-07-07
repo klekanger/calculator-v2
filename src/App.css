@@ -27,6 +27,17 @@
   border-radius: 10px;
 }
 
+#formula {
+  color: darkred; 
+  text-align: right; 
+  background-color: #eee;
+  width: 88%;
+  padding: 10px 10px 2px 2px;
+  margin: 4px;
+  height: 50px;
+  border-radius: 10px;
+}
+
 
 #show-formula {
   color: darkred; 
