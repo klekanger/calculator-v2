@@ -15,7 +15,6 @@ const Calculator = props => {
 
   // PUSHED RESET (AC)
   const handleReset = () => {
-    console.log("reset");
     setFormulaToCalculate("");
     setCurrentVal("0");
   };
