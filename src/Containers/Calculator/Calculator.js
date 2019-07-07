@@ -14,14 +14,14 @@ const Calculator = props => {
   // Onclick-handlers for the buttons
 
   // PUSHED RESET (AC)
-  const reset = () => {
+  const handleReset = () => {
     console.log("reset");
     setFormulaToCalculate("");
     setCurrentVal("0");
   };
 
   // PUSHED OPERATOR BUTTON
-  const operator = event => {
+  const handleOperator = event => {
 
     let prevVal = formulaToCalculate;    
     if (havePrevCalculation) {
@@ -46,7 +46,7 @@ const Calculator = props => {
 
   // PUSHED DIGIT BUTTON
 
-  const digit = event => {
+  const handleDigit = event => {
 
     if (havePrevCalculation) {
       setHavePrevCalculation(false);
@@ -63,7 +63,7 @@ const Calculator = props => {
   };
 
   // PUSHED DECIMAL BUTTON
-  const decimal = event => {
+  const handleDecimal = event => {
   
     if (!containsDecimal.test(currentVal)) {
       setCurrentVal(currentVal + ".");
@@ -72,7 +72,7 @@ const Calculator = props => {
   };
 
   // PUSHED EQUAL SIGN TO CALCULATE RESULT
-  const calculate = event => {
+  const handleCalculate = event => {
 
     let expression = formulaToCalculate;
 
@@ -92,70 +92,70 @@ const Calculator = props => {
   return (
     <div className="show-buttons">
       <FormulaBar fullFormula={formulaToCalculate} valueToShow={currentVal}  />
-      <button id="clear" value="AC" className="big-button" onClick={reset}>
+      <button id="clear" value="AC" className="big-button" onClick={handleReset}>
         AC
       </button>
-      <button id="divide" value="/" className="small-button" onClick={operator}>
+      <button id="divide" value="/" className="small-button" onClick={handleOperator}>
         /
       </button>
       <button
         id="multiply"
         value="*"
         className="small-button"
-        onClick={operator}
+        onClick={handleOperator}
       >
         X
       </button>
-      <button id="seven" value="7" className="small-button" onClick={digit}>
+      <button id="seven" value="7" className="small-button" onClick={handleDigit}>
         7
       </button>
-      <button id="eight" value="8" className="small-button" onClick={digit}>
+      <button id="eight" value="8" className="small-button" onClick={handleDigit}>
         8
       </button>
-      <button id="nine" value="9" className="small-button" onClick={digit}>
+      <button id="nine" value="9" className="small-button" onClick={handleDigit}>
         9
       </button>
       <button
         id="subtract"
         value="-"
         className="small-button"
-        onClick={operator}
+        onClick={handleOperator}
       >
         -
       </button>
-      <button id="four" value="4" className="small-button" onClick={digit}>
+      <button id="four" value="4" className="small-button" onClick={handleDigit}>
         4
       </button>
-      <button id="five" value="5" className="small-button" onClick={digit}>
+      <button id="five" value="5" className="small-button" onClick={handleDigit}>
         5
       </button>
-      <button id="six" value="6" className="small-button" onClick={digit}>
+      <button id="six" value="6" className="small-button" onClick={handleDigit}>
         6
       </button>
-      <button id="add" value="+" className="small-button" onClick={operator}>
+      <button id="add" value="+" className="small-button" onClick={handleOperator}>
         +
       </button>
-      <button id="one" value="1" className="small-button" onClick={digit}>
+      <button id="one" value="1" className="small-button" onClick={handleDigit}>
         1
       </button>
-      <button id="two" value="2" className="small-button" onClick={digit}>
+      <button id="two" value="2" className="small-button" onClick={handleDigit}>
         2
       </button>
-      <button id="three" value="3" className="small-button" onClick={digit}>
+      <button id="three" value="3" className="small-button" onClick={handleDigit}>
         3
       </button>
       <button
         id="equals"
         value="="
         className="vertical-button"
-        onClick={calculate}
+        onClick={handleCalculate}
       >
         =
       </button>
-      <button id="zero" value="0" className="big-button" onClick={digit}>
+      <button id="zero" value="0" className="big-button" onClick={handleDigit}>
         0
       </button>
-      <button id="decimal" value="." className="small-button" onClick={decimal}>
+      <button id="decimal" value="." className="small-button" onClick={handleDecimal}>
         .
       </button>
     </div>
