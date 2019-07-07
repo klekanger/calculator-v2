@@ -1,5 +1,6 @@
 
 .formula-bar {
+ 
     margin: auto;
     background-color: red;
 }
@@ -20,13 +21,14 @@ button:active {
 .show-buttons {
     background-color: #fff;
     width: 50%;
-    padding: 2px;
+    padding: 3px;
     margin: 4px;
     border-radius: 10px;
   }
 
 .small-button {
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-weight: bold;
     width: 10vw;
     height: 10vh;
     border: 1px solid #ccc;
@@ -36,7 +38,8 @@ button:active {
   }
   
   .big-button {
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-weight: bold;
     width: 22vw;
     height: 10vh;
     border: 1px solid #ccc;
@@ -46,7 +49,8 @@ button:active {
   }
   
   .vertical-button {
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-weight: bold;
     width: 10vw;
     height: 22vh;
     border: 1px solid #ddd;

@@ -1,12 +1,19 @@
 import React from "react";
-import Calculator from './Containers/Calculator/Calculator';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from '@material-ui/core/Container';
+import Calculator from "./Containers/Calculator/Calculator";
 
 import "./App.css";
 
 const app = props => {
-    return (
-      <Calculator />
-    )
-}
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      
+        <Calculator />
+      
+    </React.Fragment>
+  );
+};
 
 export default app;
