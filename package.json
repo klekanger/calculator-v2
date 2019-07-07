@@ -1,5 +1,11 @@
 {
   "name": "calculator",
+    "author": {
+      "name": "Kurt Lekanger",
+      "email": "kurt@lekanger.no",
+      "url": "https://lekanger.no"
+    }
+  ,
   "version": "0.5.0",
   "private": true,
   "dependencies": {
