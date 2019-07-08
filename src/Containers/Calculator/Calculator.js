@@ -18,6 +18,8 @@ const Calculator = props => {
 
   const handleReset = () => {
     setFormulaToCalculate("");
+    setHavePrevCalculation(false);
+    setTempFormulaDisplay("");
     setCurrentVal("0");
   };
 
@@ -86,7 +88,7 @@ const Calculator = props => {
   // Render formulabar with result and all the buttons
 
   return (
-    <div className="show-buttons">
+    <div id="calc-wrapper">
       <FormulaBar
         fullFormula={
           setHavePrevCalculation ? tempFormulaDisplay : formulaToCalculate
