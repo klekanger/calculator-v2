@@ -12,6 +12,7 @@ const Calculator = props => {
   const [formulaToCalculate, setFormulaToCalculate] = useState("");
   const [currentVal, setCurrentVal] = useState("0");
   const [havePrevCalculation, setHavePrevCalculation] = useState(false);
+  const [tempFormulaDisplay, setTempFormulaDisplay] = useState("");
 
   // Onclick-handlers for the buttons
 
@@ -76,7 +77,8 @@ const Calculator = props => {
     // eslint-disable-next-line
     let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
 
-    setFormulaToCalculate(formulaToCalculate + " = " + answer);
+    setTempFormulaDisplay(formulaToCalculate + " = " + answer);
+    setFormulaToCalculate("");
     setCurrentVal(answer);
     setHavePrevCalculation(true);
   };
@@ -85,7 +87,12 @@ const Calculator = props => {
 
   return (
     <div className="show-buttons">
-      <FormulaBar fullFormula={formulaToCalculate} valueToShow={currentVal} />
+      <FormulaBar
+        fullFormula={
+          setHavePrevCalculation ? tempFormulaDisplay : formulaToCalculate
+        }
+        valueToShow={currentVal}
+      />
       <Buttons
         digit={handleDigit}
         operator={handleOperator}

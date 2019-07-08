@@ -1,15 +1,14 @@
 import React from "react";
-import Aux from "../../hoc/Aux";
 
 const Formulabar = props => {
   return (
-    <Aux>
+    <div>
       <div id="formula">
         {!props.fullFormula ? "N/A" : props.fullFormula}
         <br />
       </div>
       <div id="display">{props.valueToShow}</div>
-    </Aux>
+    </div>
   );
 };
 
