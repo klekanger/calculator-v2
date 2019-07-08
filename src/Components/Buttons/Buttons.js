@@ -1,0 +1,126 @@
+import React from "react";
+
+const Buttons = props => {
+  return (
+    <div>
+      <button
+        id="clear"
+        value="AC"
+        className="big-button"
+        onClick={props.reset}
+      >
+        AC
+      </button>
+      <button
+        id="divide"
+        value="/"
+        className="small-button"
+        onClick={props.operator}
+      >
+        /
+      </button>
+      <button
+        id="multiply"
+        value="*"
+        className="small-button"
+        onClick={props.operator}
+      >
+        X
+      </button>
+      <button
+        id="seven"
+        value="7"
+        className="small-button"
+        onClick={props.digit}
+      >
+        7
+      </button>
+      <button
+        id="eight"
+        value="8"
+        className="small-button"
+        onClick={props.digit}
+      >
+        8
+      </button>
+      <button
+        id="nine"
+        value="9"
+        className="small-button"
+        onClick={props.digit}
+      >
+        9
+      </button>
+      <button
+        id="subtract"
+        value="-"
+        className="small-button"
+        onClick={props.operator}
+      >
+        -
+      </button>
+      <button
+        id="four"
+        value="4"
+        className="small-button"
+        onClick={props.digit}
+      >
+        4
+      </button>
+      <button
+        id="five"
+        value="5"
+        className="small-button"
+        onClick={props.digit}
+      >
+        5
+      </button>
+      <button id="six" value="6" className="small-button" onClick={props.digit}>
+        6
+      </button>
+      <button
+        id="add"
+        value="+"
+        className="small-button"
+        onClick={props.operator}
+      >
+        +
+      </button>
+      <button id="one" value="1" className="small-button" onClick={props.digit}>
+        1
+      </button>
+      <button id="two" value="2" className="small-button" onClick={props.digit}>
+        2
+      </button>
+      <button
+        id="three"
+        value="3"
+        className="small-button"
+        onClick={props.digit}
+      >
+        3
+      </button>
+      <button
+        id="equals"
+        value="="
+        className="vertical-button"
+        onClick={props.calculate}
+      >
+        =
+      </button>
+      <button id="zero" value="0" className="big-button" onClick={props.digit}>
+        0
+      </button>
+      <button
+        id="decimal"
+        value="."
+        className="small-button"
+        onClick={props.decimal}
+      >
+        .
+      </button>
+    </div>
+  );
+};
+
+export default Buttons;

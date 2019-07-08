@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import FormulaBar from "../../Components/FormulaBar/FormulaBar";
+import Buttons from "../../Components/Buttons/Buttons";
 import "./Calculator.css";
 
 // BUTTONS
@@ -20,8 +21,7 @@ const Calculator = props => {
   };
 
   const handleOperator = event => {
-
-    let prevVal = formulaToCalculate;    
+    let prevVal = formulaToCalculate;
     if (havePrevCalculation) {
       setHavePrevCalculation(false);
       prevVal = currentVal;
@@ -44,14 +44,13 @@ const Calculator = props => {
   // PUSHED DIGIT BUTTON
 
   const handleDigit = event => {
-
     if (havePrevCalculation) {
       setHavePrevCalculation(false);
       setCurrentVal(event.target.value);
       setFormulaToCalculate("" + event.target.value);
     } else {
       if (currentVal === "0") {
-       setCurrentVal("" + event.target.value);
+        setCurrentVal("" + event.target.value);
       } else {
         setCurrentVal(currentVal + event.target.value);
       }
@@ -61,7 +60,6 @@ const Calculator = props => {
 
   // PUSHED DECIMAL BUTTON
   const handleDecimal = event => {
-  
     if (!containsDecimal.test(currentVal)) {
       setCurrentVal(currentVal + ".");
       setFormulaToCalculate(formulaToCalculate + ".");
@@ -70,7 +68,6 @@ const Calculator = props => {
 
   // PUSHED EQUAL SIGN TO CALCULATE RESULT
   const handleCalculate = event => {
-
     let expression = formulaToCalculate;
 
     if (endsWithOperator.test(expression)) {
@@ -88,73 +85,14 @@ const Calculator = props => {
 
   return (
     <div className="show-buttons">
-      <FormulaBar fullFormula={formulaToCalculate} valueToShow={currentVal}  />
-      <button id="clear" value="AC" className="big-button" onClick={handleReset}>
-        AC
-      </button>
-      <button id="divide" value="/" className="small-button" onClick={handleOperator}>
-        /
-      </button>
-      <button
-        id="multiply"
-        value="*"
-        className="small-button"
-        onClick={handleOperator}
-      >
-        X
-      </button>
-      <button id="seven" value="7" className="small-button" onClick={handleDigit}>
-        7
-      </button>
-      <button id="eight" value="8" className="small-button" onClick={handleDigit}>
-        8
-      </button>
-      <button id="nine" value="9" className="small-button" onClick={handleDigit}>
-        9
-      </button>
-      <button
-        id="subtract"
-        value="-"
-        className="small-button"
-        onClick={handleOperator}
-      >
-        -
-      </button>
-      <button id="four" value="4" className="small-button" onClick={handleDigit}>
-        4
-      </button>
-      <button id="five" value="5" className="small-button" onClick={handleDigit}>
-        5
-      </button>
-      <button id="six" value="6" className="small-button" onClick={handleDigit}>
-        6
-      </button>
-      <button id="add" value="+" className="small-button" onClick={handleOperator}>
-        +
-      </button>
-      <button id="one" value="1" className="small-button" onClick={handleDigit}>
-        1
-      </button>
-      <button id="two" value="2" className="small-button" onClick={handleDigit}>
-        2
-      </button>
-      <button id="three" value="3" className="small-button" onClick={handleDigit}>
-        3
-      </button>
-      <button
-        id="equals"
-        value="="
-        className="vertical-button"
-        onClick={handleCalculate}
-      >
-        =
-      </button>
-      <button id="zero" value="0" className="big-button" onClick={handleDigit}>
-        0
-      </button>
-      <button id="decimal" value="." className="small-button" onClick={handleDecimal}>
-        .
-      </button>
+      <FormulaBar fullFormula={formulaToCalculate} valueToShow={currentVal} />
+      <Buttons
+        digit={handleDigit}
+        operator={handleOperator}
+        calculate={handleCalculate}
+        reset={handleReset}
+        decimal={handleDecimal}
+      />
     </div>
   );
 };
