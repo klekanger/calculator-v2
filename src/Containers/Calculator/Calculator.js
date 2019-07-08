@@ -28,6 +28,7 @@ const Calculator = props => {
     if (havePrevCalculation) {
       setHavePrevCalculation(false);
       prevVal = currentVal;
+      setTempFormulaDisplay(currentVal + event.target.value)
     }
 
     // Check if formulaToCalculate already ends with an operator. If so, remove it and replace with the operator just entered
