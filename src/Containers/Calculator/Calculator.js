@@ -28,7 +28,7 @@ const Calculator = props => {
     if (havePrevCalculation) {
       setHavePrevCalculation(false);
       prevVal = currentVal;
-      setTempFormulaDisplay(currentVal + event.target.value)
+      setTempFormulaDisplay(currentVal + event.target.value);
     }
 
     // Check if formulaToCalculate already ends with an operator. If so, remove it and replace with the operator just entered
@@ -77,10 +77,17 @@ const Calculator = props => {
     if (endsWithOperator.test(expression)) {
       expression = expression.slice(0, -1);
     }
-    // eslint-disable-next-line
-    let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
 
-    setTempFormulaDisplay(formulaToCalculate + " = " + answer);
+    let answer;
+    try {
+      // eslint-disable-next-line
+      answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
+      setTempFormulaDisplay(formulaToCalculate + " = " + answer);
+    } catch (error) {
+      console.log("ERROR: " + error);
+      setTempFormulaDisplay("ERROR");
+    }
+
     setFormulaToCalculate("");
     setCurrentVal(answer);
     setHavePrevCalculation(true);
@@ -90,6 +97,7 @@ const Calculator = props => {
 
   return (
     <div id="calc-wrapper">
+      Calc v0.2
       <FormulaBar
         fullFormula={
           setHavePrevCalculation ? tempFormulaDisplay : formulaToCalculate
