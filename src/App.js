@@ -6,12 +6,12 @@ import "./App.css";
 
 const app = props => {
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
-      
-        <Calculator />
-      
-    </React.Fragment>
+
+      <Calculator />
+
+    </>
   );
 };
 
